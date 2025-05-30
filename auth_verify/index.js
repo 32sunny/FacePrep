@@ -30,6 +30,6 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     app.use('/api/auth', authRoutes);
     app.use('/api/todos', todoRoutes);
 
- app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
+ app.listen(process.env.PORT, () => {
+    console.log(`Server is running on ${process.env.PORT}`);
  });
