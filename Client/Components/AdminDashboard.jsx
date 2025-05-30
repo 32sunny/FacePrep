@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 export const AdminDashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
@@ -10,8 +12,11 @@ export const AdminDashboard = () => {
   const [editingId, setEditingId] = useState(null);
   const [editTodo, setEditTodo] = useState({ title: '', link: '' });
 
-  const correctPassword = '1234'; // Replace with secure handling in production
-  const adminEmail = 'sunnymourya5214@gmail.com'; // Only this email gets access
+  const correctPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+  const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+  
+  
+  
 
   useEffect(() => {
     const authStatus = localStorage.getItem('admin-auth');
