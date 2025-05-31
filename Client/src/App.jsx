@@ -64,6 +64,32 @@ export default function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const visitTime = localStorage.getItem('visitTime');
+    const currentTime = new Date().getTime();
+  
+    if (!visitTime || currentTime - parseInt(visitTime) > 3600000) {
+      // More than 1 hour has passed OR first visit
+      localStorage.removeItem('hasVisited');
+      localStorage.removeItem('visitTime');
+  
+      // Show loading screen for new visit
+      setLoading(true);
+      localStorage.setItem('hasVisited', 'true');
+      localStorage.setItem('visitTime', currentTime.toString());
+  
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 8000);
+  
+      return () => clearTimeout(timer);
+    } else {
+      setLoading(false);
+    }
+  }, []);
+  
+
+
   return (
     <>
       {loading ? (
