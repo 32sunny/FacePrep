@@ -46,7 +46,7 @@ const Navbar = () => {
             <img 
               src="https://faceprep.in/wp-content/uploads/2023/10/Vector.png" 
               alt="logo" 
-              className="h-20 w-42"
+              className="h-24 w-44 mt-8"
             />
           </a>
 

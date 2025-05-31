@@ -14,7 +14,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/auth/send-otp', { email, password });
+      await axios.post('https://faceprep-1.onrender.com/api/auth/send-otp', { email, password });
       localStorage.setItem('user', email);
       setMessage('OTP sent! Please check your email.');
       toast.success('OTP sent! Please check your email.');

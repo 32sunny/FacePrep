@@ -8,10 +8,12 @@ export default function VerifyOTP() {
   const navigate = useNavigate();
   const email = localStorage.getItem('email');
 
+
+
   const handleVerify = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/auth/verify-otp', { email, otp });
+      await axios.post('https://faceprep-1.onrender.com/api/auth/verify-otp', { email, otp });
       navigate('/');
       toast.success("OTP verified successfully!");
     } catch (err) {
