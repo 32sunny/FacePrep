@@ -277,6 +277,8 @@ const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
         </ul>
       </div>
     </div>
+    
+
   </div>
   
   );
